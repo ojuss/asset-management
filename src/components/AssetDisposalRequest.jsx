@@ -3,7 +3,8 @@ import Header from './Header';
 import NavgiationPath from './NavigationPath';
 import AssetTable from './AssetTable';
 import PresentConditionTable from './PresentConditionTable';
-import '../styles/AssetDisposalRequest.css';
+import ApprovalRequirements from './ApprovalRequirements';
+import Attachements from './Attachements';
 import {
   Box,
   Button,
@@ -29,6 +30,11 @@ const AssetDisposalRequest = () => {
       setFileName(file.name);
     }
   };
+
+  const [showGDC, setShowGDC] = useState(false);
+  const [showIDT, setShowIDT] = useState(false);
+  const [showImport, setShowImport] = useState(false);
+
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -124,13 +130,14 @@ const AssetDisposalRequest = () => {
           <Typography variant="h6" gutterBottom>
             Approval Requirements
           </Typography>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <FormControlLabel control={<Checkbox />} label="GDC" />
-              <FormControlLabel control={<Checkbox />} label="IDT" />
-              <FormControlLabel control={<Checkbox />} label="Import" />
-            </Grid>
-          </Grid>
+          
+          <ApprovalRequirements 
+            showGDC={showGDC}
+            showIDT={showIDT}
+            showImport={showImport}
+            setShowGDC={setShowGDC}
+            setShowIDT={setShowIDT}
+            setShowImport={setShowImport} />
 
           <Divider class="divider" />
 
@@ -138,20 +145,7 @@ const AssetDisposalRequest = () => {
           <Typography variant="h6" gutterBottom>
             Attachments
           </Typography>
-          <div>
-            <input 
-              type="file" 
-              hidden 
-              id="fileInput" 
-              onChange={handleFileChange} 
-            />
-            <label htmlFor="fileInput">
-              <Button variant="contained" component="span" color="primary">
-                Select File
-              </Button>
-            </label>
-            {fileName && <Typography variant="body1">Selected file: {fileName}</Typography>}
-          </div>
+          <Attachements />
 
           <Divider class="divider" />
 
