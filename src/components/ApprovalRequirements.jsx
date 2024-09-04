@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Typography, Grid, FormControlLabel, Checkbox, Box } from '@material-ui/core';
+import { Typography, Grid, FormControlLabel, Checkbox, Box, Divider } from '@material-ui/core';
 import GDCComponent from './GDCTrue';
 import IDTComponent from './IDTTrue';
+import ImportTrue from './ImportTrue';
 
 const ApprovalRequirements = () => {
   
@@ -31,20 +32,23 @@ const ApprovalRequirements = () => {
 
       {showGDC && (
         <Box mt={2}>
+          <Divider class="divider" />
           <Typography variant="h6">GDC Component</Typography>
           <GDCComponent />
         </Box>
       )}
       {showIDT && (
         <Box mt={2}>
+          <Divider class="divider" />
           <Typography variant="h6">IDT Component</Typography>
           <IDTComponent />
         </Box>
       )}
       {showImport && (
         <Box mt={2}>
+          <Divider class="divider" />
           <Typography variant="h6">Import Component</Typography>
-          {/* Replace with your actual Import component */}
+          <ImportTrue />
         </Box>
       )}
     </>

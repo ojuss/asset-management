@@ -5,6 +5,9 @@ import Attachements from "./Attachements";
 
 
 function IDTTrue() {
+
+    const cells = Array(11).fill(null); 
+
     const headers = [
         'Asset Code / No.',
         'Asset Description',
@@ -12,6 +15,11 @@ function IDTTrue() {
         'PO No.',
         'PO Line Item No.',
         'PO Line Item Description',
+        'GST%',
+        'SGST%',
+        'IGST%',
+        'HSN Code',
+        'Remarks'
       ];
   return (
     <div>
@@ -34,47 +42,24 @@ function IDTTrue() {
             </Grid>
         </Grid>
         <Divider class="divider" />
-        <Typography variant="h6" gutterBottom> GDC Comments </Typography>
+        <Typography variant="h6" gutterBottom> IDT Comments </Typography>
         <TableContainer component={Paper} style={{ maxWidth: '100%', overflowX: 'auto' }}>
             <Table style={{ minWidth: 800 }}>
                 <TableHead> 
                 <TableRow>
-                    
                     {headers.map((header, index) => (
                     <TableCell key={index} style={{ borderRight: '1px solid #ccc' }}>
                         {header}
                     </TableCell>
                     ))}
+
                 </TableRow>
                 <TableRow>
-                    <TableCell style={{ borderRight: '1px solid #ccc' }}>
-                        <TextField variant="outlined" size="small" />
+                    {cells.map((_, index) => (
+                    <TableCell key={index} style={{ borderRight: '1px solid #ccc' }}>
+                      <TextField variant="outlined" size="small" inputProps={{ readOnly : true}}/>
                     </TableCell>
-                    <TableCell style={{ borderRight: '1px solid #ccc' }}>
-                        <TextField variant="outlined" size="small" />
-                    </TableCell>
-                    <TableCell style={{ borderRight: '1px solid #ccc' }}>
-                        <FormControl variant="outlined" size="small" fullWidth>
-                            <InputLabel></InputLabel>
-                            <Select defaultValue="">
-                            <MenuItem value="">
-                                <em>None</em>
-                            </MenuItem>
-                            <MenuItem value="Option1">Option 1</MenuItem>
-                            <MenuItem value="Option2">Option 2</MenuItem>
-                            <MenuItem value="Option3">Option 3</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </TableCell>
-                    <TableCell style={{ borderRight: '1px solid #ccc' }}>
-                        <TextField variant="outlined" size="small" />
-                    </TableCell>
-                    <TableCell style={{ borderRight: '1px solid #ccc' }}>
-                        <TextField variant="outlined" size="small" />
-                    </TableCell>
-                    <TableCell style={{ borderRight: '1px solid #ccc' }}>
-                        <TextField variant="outlined" size="small" />
-                    </TableCell>
+                  ))}
                 </TableRow>
                 </TableHead>
                 
