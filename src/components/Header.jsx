@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, Drawer, IconButton, List, ListItem, ListItemText, useMediaQuery } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Drawer, IconButton, List, ListItem, ListItemText } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import { useTheme } from '@material-ui/core/styles';
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -24,7 +21,6 @@ const Header = () => {
             color="inherit"
             aria-label="menu"
             onClick={toggleDrawer(true)}
-            style={{ marginRight: theme.spacing(2) }}
           >
             <MenuIcon />
           </IconButton>

@@ -3,6 +3,7 @@ import Header from './Header';
 import NavgiationPath from './NavigationPath';
 import AssetTable from './AssetTable';
 import PresentConditionTable from './PresentConditionTable';
+import '../styles/AssetDisposalRequest.css';
 import {
   Box,
   Button,
@@ -74,7 +75,7 @@ const AssetDisposalRequest = () => {
             </Grid>
           </Grid>
 
-          <Divider style={{ margin: '20px 0' }} />
+          <Divider class="divider" />
 
           {/* Section 2: Asset Details */}
           <Typography variant="h6" gutterBottom>
@@ -82,7 +83,7 @@ const AssetDisposalRequest = () => {
           </Typography>
           <AssetTable />
 
-          <Divider style={{ margin: '20px 0' }} />
+          <Divider class="divider" />
 
           {/* Section 3: Two Text Boxes */}
           <Typography variant="h6" gutterBottom>
@@ -109,7 +110,7 @@ const AssetDisposalRequest = () => {
             </Grid>
           </Grid>
 
-          <Divider style={{ margin: '20px 0' }} />
+          <Divider class="divider" />
 
           {/* Section 4: Present Condition of the Asset */}
           <Typography variant="h6" gutterBottom>
@@ -117,7 +118,7 @@ const AssetDisposalRequest = () => {
           </Typography>
           <PresentConditionTable />
 
-          <Divider style={{ margin: '20px 0' }} />
+          <Divider class="divider" />
 
           {/* Section 5: Checkboxes */}
           <Typography variant="h6" gutterBottom>
@@ -131,7 +132,7 @@ const AssetDisposalRequest = () => {
             </Grid>
           </Grid>
 
-          <Divider style={{ margin: '20px 0' }} />
+          <Divider class="divider" />
 
           {/* Section 6: Attachments */}
           <Typography variant="h6" gutterBottom>
@@ -152,7 +153,7 @@ const AssetDisposalRequest = () => {
             {fileName && <Typography variant="body1">Selected file: {fileName}</Typography>}
           </div>
 
-          <Divider style={{ margin: '20px 0' }} />
+          <Divider class="divider" />
 
           {/* Buttons */}
           <Box display="flex" justifyContent="space-between" mt={2}>

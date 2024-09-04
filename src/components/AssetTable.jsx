@@ -51,7 +51,7 @@ export default function AssetTable() {
             </TableCell>
             <TableCell style={{ borderRight: '1px solid #ccc' }}>
               <FormControl variant="outlined" size="small" fullWidth>
-                <InputLabel>None</InputLabel>
+                <InputLabel></InputLabel>
                 <Select defaultValue="">
                   <MenuItem value="">
                     <em>None</em>
@@ -73,7 +73,7 @@ export default function AssetTable() {
             </TableCell>
             <TableCell style={{ borderRight: '1px solid #ccc' }}>
               <FormControl variant="outlined" size="small" fullWidth>
-                <InputLabel>None</InputLabel>
+                <InputLabel></InputLabel>
                 <Select defaultValue="">
                   <MenuItem value="">
                     <em>None</em>
