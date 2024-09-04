@@ -43,7 +43,15 @@ function ImportTrue() {
         <Typography variant="h6" gutterBottom> Import and Collaboration Cell Comments </Typography>
         <TableContainer component={Paper} style={{ maxWidth: '100%', overflowX: 'auto' }}>
             <Table style={{ minWidth: 800 }}>
-                <TableHead> 
+                <TableHead>
+                <TableRow>
+                    <TableCell colSpan={6} align="center" style={{ borderRight: '1px solid #ccc' }}>
+                        Details of Assets
+                    </TableCell>
+                    <TableCell colSpan={3} align="center">
+                        IDT Comments
+                    </TableCell>
+                </TableRow> 
                 <TableRow>
                     {headers.map((header, index) => (
                     <TableCell key={index} style={{ borderRight: '1px solid #ccc' }}>
