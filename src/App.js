@@ -1,5 +1,5 @@
 import './App.css';
-import AssetDisposalRequest from './components/AssetDisposalRequest';
+import AssetDisposalRequest from './screen1-components/AssetDisposalRequest';
 
 function App() {
   return (

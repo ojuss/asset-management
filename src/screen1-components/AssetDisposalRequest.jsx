@@ -5,6 +5,7 @@ import AssetTable from './AssetTable';
 import PresentConditionTable from './PresentConditionTable';
 import ApprovalRequirements from './ApprovalRequirements';
 import Attachements from './Attachements';
+import saveFormData from '../backend/formData';
 import {
   Box,
   Button,
@@ -14,26 +15,32 @@ import {
   Paper,
   TextField,
   Typography,
-  Checkbox,
-  FormControlLabel,
   Divider,
   useTheme,
   useMediaQuery
 } from '@material-ui/core';
 
 const AssetDisposalRequest = () => {
-  const [fileName, setFileName] = useState('');
-
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setFileName(file.name);
-    }
-  };
 
   const [showGDC, setShowGDC] = useState(false);
   const [showIDT, setShowIDT] = useState(false);
   const [showImport, setShowImport] = useState(false);
+  const [formData, setFormData] = useState({
+    field1: '',
+    field2: '',
+  });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    saveFormData(formData);
+  };
 
 
   const theme = useTheme();
@@ -50,6 +57,7 @@ const AssetDisposalRequest = () => {
           <NavgiationPath />
 
           {/* Section 1: Request Details */}
+          
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField label="Request Ref No." fullWidth variant="outlined" />

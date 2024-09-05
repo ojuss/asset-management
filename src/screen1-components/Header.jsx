@@ -30,7 +30,7 @@ const Header = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
+      {/* <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
         <List>
           <ListItem button>
             <ListItemText primary="Home" />
@@ -42,7 +42,7 @@ const Header = () => {
             <ListItemText primary="Contact" />
           </ListItem>
         </List>
-      </Drawer>
+      </Drawer> */}
     </>
   );
 };
