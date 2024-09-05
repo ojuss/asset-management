@@ -2,7 +2,7 @@ import React from 'react';
 import { Breadcrumbs, Link } from '@material-ui/core';
 import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
 
-function NavigationPath() {
+function NavigationPath({ path }) {
   return (
     <Breadcrumbs
       aria-label="breadcrumb"
@@ -13,7 +13,7 @@ function NavigationPath() {
         Home
       </Link>
       <Link color="inherit" href="" underline="none">
-        Asset Disposal Request
+        {path}
       </Link>
     </Breadcrumbs>
   );

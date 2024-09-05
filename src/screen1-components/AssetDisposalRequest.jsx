@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import Header from './Header';
-import NavgiationPath from './NavigationPath';
-import AssetTable from './AssetTable';
-import PresentConditionTable from './PresentConditionTable';
-import ApprovalRequirements from './ApprovalRequirements';
-import Attachements from './Attachements';
-import saveFormData from '../backend/formData';
+import React, { useState } from "react";
+import Header from "../layout-components/Header";
+import NavgiationPath from "../layout-components/NavigationPath";
+import AssetTable from "./AssetTable";
+import PresentConditionTable from "./PresentConditionTable";
+import ApprovalRequirements from "./ApprovalRequirements";
+import Attachements from "./Attachements";
+import saveFormData from "../backend/formData";
 import {
   Box,
   Button,
@@ -17,56 +17,48 @@ import {
   Typography,
   Divider,
   useTheme,
-  useMediaQuery
-} from '@material-ui/core';
+  useMediaQuery,
+} from "@material-ui/core";
 
 const AssetDisposalRequest = () => {
-
   const [showGDC, setShowGDC] = useState(false);
   const [showIDT, setShowIDT] = useState(false);
   const [showImport, setShowImport] = useState(false);
-  const [formData, setFormData] = useState({
-    field1: '',
-    field2: '',
-  });
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    saveFormData(formData);
-  };
-
 
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <>
       <Container maxWidth={false} disableGutters>
         <Header />
-        <Paper style={{ padding: isMobile ? '30px 20px' : '60px 140px' }}>
+        <Paper style={{ padding: isMobile ? "30px 20px" : "60px 140px" }}>
           <Typography variant="h4" gutterBottom>
             Asset Disposal Request
           </Typography>
-          <NavgiationPath />
+          <NavgiationPath path={"Asset Disposal Request"}/>
 
           {/* Section 1: Request Details */}
-          
+
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField label="Request Ref No." fullWidth variant="outlined" />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField label="Request Date" fullWidth variant="outlined" type="date" InputLabelProps={{ shrink: true }} />
+              <TextField
+                label="Request Date"
+                fullWidth
+                variant="outlined"
+                type="date"
+                InputLabelProps={{ shrink: true }}
+              />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField label="Proposer / Raiser Name" fullWidth variant="outlined" />
+              <TextField
+                label="Proposer / Raiser Name"
+                fullWidth
+                variant="outlined"
+              />
             </Grid>
 
             <Grid item xs={12} sm={6}>
@@ -79,13 +71,22 @@ const AssetDisposalRequest = () => {
               <TextField label="BC No" fullWidth variant="outlined" />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField label="Disposal Type" fullWidth variant="outlined" select>
+              <TextField
+                label="Disposal Type"
+                fullWidth
+                variant="outlined"
+                select
+              >
                 <MenuItem value="Type 1">Type 1</MenuItem>
                 <MenuItem value="Type 2">Type 2</MenuItem>
               </TextField>
             </Grid>
             <Grid item xs={12}>
-              <TextField label="Plant Code & Name" fullWidth variant="outlined" />
+              <TextField
+                label="Plant Code & Name"
+                fullWidth
+                variant="outlined"
+              />
             </Grid>
           </Grid>
 
@@ -138,14 +139,15 @@ const AssetDisposalRequest = () => {
           <Typography variant="h6" gutterBottom>
             Approval Requirements
           </Typography>
-          
-          <ApprovalRequirements 
+
+          <ApprovalRequirements
             showGDC={showGDC}
             showIDT={showIDT}
             showImport={showImport}
             setShowGDC={setShowGDC}
             setShowIDT={setShowIDT}
-            setShowImport={setShowImport} />
+            setShowImport={setShowImport}
+          />
 
           <Divider class="divider" />
 
@@ -165,7 +167,7 @@ const AssetDisposalRequest = () => {
             <Button variant="contained" color="primary">
               Save as Draft
             </Button>
-            <Button variant="contained" color="primary">
+            <Button type="submit" variant="contained" color="primary">
               Submit
             </Button>
           </Box>
