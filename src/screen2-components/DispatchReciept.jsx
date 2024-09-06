@@ -21,6 +21,7 @@ import {
 } from "@material-ui/core";
 import VendorDetails from "./VendorDetails";
 import GoodsSection from "./GoodsSection";
+import Approvals from "./Approvals";
 
 const DespatchReceiptForm = () => {
   const theme = useTheme();
@@ -37,7 +38,7 @@ const DespatchReceiptForm = () => {
       <Header />
       <Paper style={{ padding: isMobile ? "30px 20px" : "60px 140px" }}>
         <Typography variant="h4" gutterBottom>
-          Despatch / Reciept Advice / Transport Requisition
+          Dispatch / Reciept Advice / Transport Requisition
         </Typography>
         <NavigationPath path={"Dispatch / Reciept Advice"} />
 
@@ -112,7 +113,9 @@ const DespatchReceiptForm = () => {
         >
           Approvals
         </Typography>
+        <Approvals />
         
+        <Divider class="divider"/>
         <Typography
           variant="h6"
           style={{ marginTop: "20px", marginBottom: "10px" }}
