@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import {
   Box,
   Grid,
@@ -6,6 +7,7 @@ import {
   Typography,
   Link,
   makeStyles,
+  Button,
 } from "@material-ui/core";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
@@ -50,25 +52,47 @@ const useStyles = makeStyles((theme) => ({
 
 const Attachments = () => {
   const classes = useStyles();
+  const [fileName, setFileName] = useState("");
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setFileName(file.name);
+    }
+  };
 
   return (
     <Box mt={2} mb={7}>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={4}>
           <Paper className={classes.approvalBox}>
-            <Typography className={classes.approvalTitle}>Final Payment Approval</Typography>
+            <Typography className={classes.approvalTitle}>
+              Final Payment Approval
+            </Typography>
             <Box className={classes.approvalInfo}>
-              <CheckCircleIcon
-                color="primary"
-                className={classes.approvalIcon}
-              />
               <Box>
-                <Typography className={classes.approvalDate}>
-                  Sun,01-Jan-2000 00:00:00 PM
-                </Typography>
-                <Typography className={classes.approvalName}>
-                  John Doe
-                </Typography>
+                <div>
+                  <input
+                    type="file"
+                    hidden
+                    id="fileInput"
+                    onChange={handleFileChange}
+                  />
+                  <label htmlFor="fileInput">
+                    <Button
+                      variant="contained"
+                      component="span"
+                      color="primary"
+                    >
+                      Select File
+                    </Button>
+                  </label>
+                  {fileName && (
+                    <Typography variant="body1">
+                      Selected file: {fileName}
+                    </Typography>
+                  )}
+                </div>
               </Box>
             </Box>
           </Paper>
@@ -79,27 +103,64 @@ const Attachments = () => {
               Asset Capitalization Approval
             </Typography>
             <Box className={classes.approvalInfo}>
-              <CheckCircleIcon
-                color="primary"
-                className={classes.approvalIcon}
-              />
               <Box>
-                <Typography className={classes.approvalDate}>
-                  Sun,01-Jan-2000 00:00:00 PM
-                </Typography>
-                <Typography className={classes.approvalName}>
-                  John Doe
-                </Typography>
+                <div>
+                  <input
+                    type="file"
+                    hidden
+                    id="fileInput"
+                    onChange={handleFileChange}
+                  />
+                  <label htmlFor="fileInput">
+                    <Button
+                      variant="contained"
+                      component="span"
+                      color="primary"
+                    >
+                      Select File
+                    </Button>
+                  </label>
+                  {fileName && (
+                    <Typography variant="body1">
+                      Selected file: {fileName}
+                    </Typography>
+                  )}
+                </div>
               </Box>
             </Box>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Paper className={classes.approvalBox}>
-            <Typography className={classes.approvalTitle}>PO Copy</Typography>
-            <Typography>
-              To be approved from portal first
+        <Paper className={classes.approvalBox}>
+            <Typography className={classes.approvalTitle}>
+              PO Copy
             </Typography>
+            <Box className={classes.approvalInfo}>
+              <Box>
+                <div>
+                  <input
+                    type="file"
+                    hidden
+                    id="fileInput"
+                    onChange={handleFileChange}
+                  />
+                  <label htmlFor="fileInput">
+                    <Button
+                      variant="contained"
+                      component="span"
+                      color="primary"
+                    >
+                      Select File
+                    </Button>
+                  </label>
+                  {fileName && (
+                    <Typography variant="body1">
+                      Selected file: {fileName}
+                    </Typography>
+                  )}
+                </div>
+              </Box>
+            </Box>
           </Paper>
         </Grid>
       </Grid>

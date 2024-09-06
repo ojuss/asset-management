@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Drawer, IconButton, List, ListItem, ListItemText } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
+
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -30,19 +31,16 @@ const Header = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-      {/* <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
+      <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
         <List>
           <ListItem button>
-            <ListItemText primary="Home" />
+            <ListItemText primary="Approval Requirements" />
           </ListItem>
           <ListItem button>
-            <ListItemText primary="About" />
-          </ListItem>
-          <ListItem button>
-            <ListItemText primary="Contact" />
+            <ListItemText primary="Dispatch Reciept Form" />
           </ListItem>
         </List>
-      </Drawer> */}
+      </Drawer>
     </>
   );
 };

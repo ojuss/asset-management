@@ -126,6 +126,9 @@ const DispatchRecieptForm = () => {
           Attachments
         </Typography>
         <Attachments />
+        <Typography>
+          Note: To view status of requests & action through pFirst portal, please click here MiNT.
+        </Typography>
       </Paper>
     </Container>
   );
