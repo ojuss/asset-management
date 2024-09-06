@@ -22,8 +22,9 @@ import {
 import VendorDetails from "./VendorDetails";
 import GoodsSection from "./GoodsSection";
 import Approvals from "./Approvals";
+import Attachments from "./Attachments";
 
-const DespatchReceiptForm = () => {
+const DispatchRecieptForm = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -115,6 +116,8 @@ const DespatchReceiptForm = () => {
         </Typography>
         <Approvals />
         
+        {/* Section 4: Attachments */}
+
         <Divider class="divider"/>
         <Typography
           variant="h6"
@@ -122,78 +125,10 @@ const DespatchReceiptForm = () => {
         >
           Attachments
         </Typography>
-        <TextField
-          fullWidth
-          variant="outlined"
-          value="All earlier documents by defaults"
-          disabled
-        />
-
-        <Typography
-          variant="h6"
-          style={{ marginTop: "20px", marginBottom: "10px" }}
-        >
-          Approved By
-        </Typography>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={4}>
-            <TextField
-              fullWidth
-              variant="outlined"
-              label="AQ Raiser"
-              value="Signature will be autofetched by earlier approval"
-              disabled
-            />
-          </Grid>
-          <Grid item xs={12} sm={4}>
-            <TextField
-              fullWidth
-              variant="outlined"
-              label="AQ Group Lead"
-              value="Signature will be autofetched by earlier approval"
-              disabled
-            />
-          </Grid>
-          <Grid item xs={12} sm={4}>
-            <TextField fullWidth variant="outlined" label="IDT" disabled />
-          </Grid>
-        </Grid>
-
-        <Box mt={2}>
-          <input
-            accept=".csv,.xlsx,.xls"
-            style={{ display: "none" }}
-            id="raised-button-file"
-            multiple
-            type="file"
-            onChange={handleFileChange}
-          />
-          <label htmlFor="raised-button-file">
-            <Button variant="contained" component="span">
-              Upload File
-            </Button>
-          </label>
-          {file && (
-            <Typography variant="body2">File uploaded: {file.name}</Typography>
-          )}
-        </Box>
-
-        <Typography variant="body2" style={{ marginTop: "10px" }}>
-          Please download & fill details in attached HSN code & Assessable Value
-          Format template only & upload in system
-        </Typography>
-
-        <Box display="flex" justifyContent="space-between" mt={2}>
-          <Button variant="contained" color="primary">
-            Download HSN code & Assessable Value Format template
-          </Button>
-          <Button variant="contained" color="primary" type="submit">
-            Submit
-          </Button>
-        </Box>
+        <Attachments />
       </Paper>
     </Container>
   );
 };
 
-export default DespatchReceiptForm;
+export default DispatchRecieptForm;
