@@ -1,20 +1,11 @@
-import React, { useState } from "react";
 import Header from "../layout-components/Header";
 import NavigationPath from "../layout-components/NavigationPath";
 import {
-  Box,
-  Button,
   Container,
   Grid,
   Paper,
   TextField,
   Typography,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
   useTheme,
   useMediaQuery,
   Divider,
@@ -28,11 +19,6 @@ const DispatchRecieptForm = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const [file, setFile] = useState(null);
-
-  const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
-  };
 
   return (
     <Container maxWidth={false} disableGutters>

@@ -1,11 +1,9 @@
 import React from "react";
 import {
-  Grid,
   Paper,
   TextField,
   Typography,
   Table,
-  TableBody,
   TableCell,
   TableContainer,
   TableHead,
@@ -13,6 +11,22 @@ import {
 } from "@material-ui/core";
 
 export default function GoodsSection() {
+  const cells = Array(11).fill(null);
+
+  const headers = [
+    "Sr No",
+    "Tool PO No",
+    "Tool No",
+    "Asset No",
+    "Description",
+    "Unit Code",
+    "Qty Advised",
+    "Qty Dispatched / Receipt",
+    "941 Movement No",
+    "Rate",
+    "WDV Value/ Amount",
+  ];
+
   return (
     <>
       <Typography
@@ -25,52 +39,22 @@ export default function GoodsSection() {
         <Table style={{ minWidth: 1600 }}>
           <TableHead>
             <TableRow>
-              <TableCell>Sr No</TableCell>
-              <TableCell>Tool PO No</TableCell>
-              <TableCell>Tool No</TableCell>
-              <TableCell>Asset No</TableCell>
-              <TableCell>Description</TableCell>
-              <TableCell>Unit Code</TableCell>
-              <TableCell>Qty Advised</TableCell>
-              <TableCell>Qty Dispatched / Receipt</TableCell>
-              <TableCell>941 Movement No</TableCell>
-              <TableCell>Rate</TableCell>
-              <TableCell>WDV Value/ Amount</TableCell>
+              {headers.map((header, index) => (
+                <TableCell key={index} className="borderElement">
+                  {header}
+                </TableCell>
+              ))}
             </TableRow>
             <TableRow>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
-                <TextField variant="outlined" size="small" />
-              </TableCell>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
-                <TextField variant="outlined" size="small" />
-              </TableCell>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
-                <TextField variant="outlined" size="small" />
-              </TableCell>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
-                <TextField variant="outlined" size="small" />
-              </TableCell>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
-                <TextField variant="outlined" size="small" />
-              </TableCell>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
-                <TextField variant="outlined" size="small" />
-              </TableCell>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
-                <TextField variant="outlined" size="small" />
-              </TableCell>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
-                <TextField variant="outlined" size="small" />
-              </TableCell>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
-                <TextField variant="outlined" size="small" />
-              </TableCell>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
-                <TextField variant="outlined" size="small" />
-              </TableCell>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
-                <TextField variant="outlined" size="small" />
-              </TableCell>
+              {cells.map((_, index) => (
+                <TableCell key={index} className="borderElement">
+                  <TextField
+                    variant="outlined"
+                    size="small"
+                    inputProps={{ readOnly: true }}
+                  />
+                </TableCell>
+              ))}
             </TableRow>
           </TableHead>
         </Table>

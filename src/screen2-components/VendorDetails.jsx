@@ -16,7 +16,7 @@ function VendorDetails() {
   return (
     <>
       <Typography
-        variant="h6"
+        variant="h6" 
         style={{ marginTop: "20px", marginBottom: "10px" }}
       >
         Vendor Details (Name & Address)
@@ -25,18 +25,18 @@ function VendorDetails() {
         <Table style={{ minWidth: 400 }}>
           <TableHead>
             <TableRow>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
+              <TableCell className="borderElement">
                 Vendor's Code
               </TableCell>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
+              <TableCell className="borderElement">
                 Vendor's Address
               </TableCell>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
+              <TableCell className="borderElement">
                 Vendor's Reference (if any)
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
+              <TableCell className="borderElement">
                 <TextField
                   fullWidth
                   variant="outlined"
@@ -44,7 +44,7 @@ function VendorDetails() {
                   disabled
                 />
               </TableCell>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
+              <TableCell className="borderElement">
                 <TextField
                   fullWidth
                   variant="outlined"
@@ -52,7 +52,7 @@ function VendorDetails() {
                   disabled
                 />
               </TableCell>
-              <TableCell style={{ borderRight: "1px solid #ccc" }}>
+              <TableCell className="borderElement">
                 <TextField
                   fullWidth
                   variant="outlined"

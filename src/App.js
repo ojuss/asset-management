@@ -5,8 +5,8 @@ import DispatchRecieptForm from './screen2-components/DispatchRecieptForm';
 function App() {
   return (
     <div className="App">
-      {/* <DispatchRecieptForm /> */}
-      <AssetDisposalRequest />
+      <DispatchRecieptForm />
+      {/* <AssetDisposalRequest /> */}
     </div>
   );
 }

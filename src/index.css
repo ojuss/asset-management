@@ -1,6 +1,26 @@
 body {
   margin: 0;
 }
+
 .divider {
   margin: 20px 0;
+}
+
+.form {
+  padding: 60px 140px; 
+}
+
+@media (max-width: 600px) { 
+  .form {
+    padding: 30px 20px; 
+  }
+}
+
+.borderElement {
+  border-right: 1px solid #ccc;
+}
+
+.table-container {
+  max-width: 100%;
+  overflow-x: auto;
 }

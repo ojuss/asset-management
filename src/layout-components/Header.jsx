@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Drawer, IconButton, List, ListItem, ListItemText } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+// import { useState } from 'react';
 
 
 const Header = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  // App Drawer if needed
 
-  const toggleDrawer = (open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
-    setDrawerOpen(open);
-  };
+
+  // const [drawerOpen, setDrawerOpen] = useState(false);
+
+  // const toggleDrawer = (open) => (event) => {
+  //   if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+  //     return;
+  //   }
+  //   setDrawerOpen(open);
+  // };
   
 
   return (
@@ -22,7 +25,7 @@ const Header = () => {
             edge="start"
             color="inherit"
             aria-label="menu"
-            onClick={toggleDrawer(true)}
+            // onClick={toggleDrawer(true)}
           >
             <MenuIcon />
           </IconButton>
@@ -31,7 +34,7 @@ const Header = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
+      {/* <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
         <List>
           <ListItem button>
             <ListItemText primary="Approval Requirements" />
@@ -40,7 +43,7 @@ const Header = () => {
             <ListItemText primary="Dispatch Reciept Form" />
           </ListItem>
         </List>
-      </Drawer>
+      </Drawer> */}
     </>
   );
 };

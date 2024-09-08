@@ -32,24 +32,24 @@ export default function AssetTable() {
   ];
 
   return (
-    <TableContainer component={Paper} style={{ maxWidth: '100%', overflowX: 'auto' }}>
+    <TableContainer component={Paper} className="table-container">
       <Table style={{ minWidth: 2200 }}>
         <TableHead>
           <TableRow>
             {headers.map((header, index) => (
-              <TableCell key={index} style={{ borderRight: '1px solid #ccc' }}>
+              <TableCell key={index} className="borderElement">
                 {header}
               </TableCell>
             ))}
           </TableRow>
           <TableRow>
-            <TableCell style={{ borderRight: '1px solid #ccc' }}>
+            <TableCell className="borderElement">
               <TextField variant="outlined" size="small" />
             </TableCell>
-            <TableCell style={{ borderRight: '1px solid #ccc' }}>
+            <TableCell className="borderElement">
               <TextField variant="outlined" size="small" />
             </TableCell>
-            <TableCell style={{ borderRight: '1px solid #ccc' }}>
+            <TableCell className="borderElement">
               <FormControl variant="outlined" size="small" fullWidth>
                 <InputLabel></InputLabel>
                 <Select defaultValue="">
@@ -62,16 +62,16 @@ export default function AssetTable() {
                 </Select>
               </FormControl>
             </TableCell>
-            <TableCell style={{ borderRight: '1px solid #ccc' }}>
+            <TableCell className="borderElement">
               <TextField variant="outlined" size="small" />
             </TableCell>
-            <TableCell style={{ borderRight: '1px solid #ccc' }}>
+            <TableCell className="borderElement">
               <TextField variant="outlined" size="small" />
             </TableCell>
-            <TableCell style={{ borderRight: '1px solid #ccc' }}>
+            <TableCell className="borderElement">
               <TextField variant="outlined" size="small" />
             </TableCell>
-            <TableCell style={{ borderRight: '1px solid #ccc' }}>
+            <TableCell className="borderElement">
               <FormControl variant="outlined" size="small" fullWidth>
                 <InputLabel></InputLabel>
                 <Select defaultValue="">
@@ -84,22 +84,22 @@ export default function AssetTable() {
                 </Select>
               </FormControl>
             </TableCell>
-            <TableCell style={{ borderRight: '1px solid #ccc' }}>
+            <TableCell className="borderElement">
               <TextField variant="outlined" size="small" />
             </TableCell>
-            <TableCell style={{ borderRight: '1px solid #ccc' }}>
+            <TableCell className="borderElement">
               <TextField variant="outlined" size="small" />
             </TableCell>
-            <TableCell style={{ borderRight: '1px solid #ccc' }}>
+            <TableCell className="borderElement">
               <TextField variant="outlined" size="small" />
             </TableCell>
-            <TableCell style={{ borderRight: '1px solid #ccc' }}>
+            <TableCell className="borderElement">
               <TextField variant="outlined" size="small" />
             </TableCell>
-            <TableCell style={{ borderRight: '1px solid #ccc' }}>
+            <TableCell className="borderElement">
               <TextField variant="outlined" size="small" />
             </TableCell>
-            <TableCell style={{ borderRight: '1px solid #ccc' }}>
+            <TableCell className="borderElement">
               <TextField variant="outlined" size="small" />
             </TableCell>
             <TableCell>

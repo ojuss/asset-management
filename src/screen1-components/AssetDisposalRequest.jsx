@@ -7,27 +7,22 @@ import ApprovalRequirements from "./ApprovalRequirements";
 import Attachements from "./Attachements";
 import formData from '../backend/formData';
 
+
 import {
   Box,
   Button,
   Container,
   Grid,
   MenuItem,
-  Paper,
   TextField,
   Typography,
   Divider,
-  useTheme,
-  useMediaQuery,
 } from "@material-ui/core";
 
 const AssetDisposalRequest = () => {
   const [showGDC, setShowGDC] = useState(false);
   const [showIDT, setShowIDT] = useState(false);
   const [showImport, setShowImport] = useState(false);
-
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const [formValues, setFormValues] = useState({ ...formData });
 
@@ -45,7 +40,7 @@ const AssetDisposalRequest = () => {
   return (
     <Container maxWidth={false} disableGutters>
       <Header />
-      <form style={{ padding: isMobile ? "30px 20px" : "60px 140px" }} onChange={handleSubmit}>
+      <form class="form" onChange={handleSubmit}>
         <Typography variant="h4" gutterBottom>
           Asset Disposal Request
         </Typography>

@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Table,
-  TableBody,
   TableCell,
   TableContainer,
   TableHead,
@@ -26,19 +25,19 @@ export default function PresentConditionTable() {
   ];
 
   return (
-    <TableContainer component={Paper} style={{ maxWidth: '100%', overflowX: 'auto' }}>
+    <TableContainer component={Paper} className="table-container">
       <Table style={{ minWidth: 1600 }}>
         <TableHead>
           <TableRow>
             {headers.map((header, index) => (
-              <TableCell key={index} style={{ borderRight: '1px solid #ccc' }}>
+              <TableCell key={index} className="borderElement">
                 {header}
               </TableCell>
             ))}
           </TableRow>
           <TableRow>
             {headers.map((_, index) => (
-              <TableCell key={index} style={{ borderRight: '1px solid #ccc' }}>
+              <TableCell key={index} className="borderElement">
                 <TextField
                   variant="outlined"
                   size="small"

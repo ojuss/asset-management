@@ -10,6 +10,8 @@ const ApprovalRequirements = () => {
   const [showIDT, setShowIDT] = useState(false);
   const [showImport, setShowImport] = useState(false);
 
+  
+
   return (
     <>
 

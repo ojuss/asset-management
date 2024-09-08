@@ -1,5 +1,5 @@
 import React from "react";
-import { MenuItem, TextField, Grid, Typography, Table, TableCell, TableContainer, TableHead, TableRow, Paper, Select, FormControl, InputLabel, Divider, Button, Box } from "@material-ui/core";
+import { MenuItem, TextField, Grid, Typography, Table, TableCell, TableContainer, TableHead, TableRow, Paper, Divider, Button, Box } from "@material-ui/core";
 import Attachements from "./Attachements";
 
 
@@ -43,11 +43,11 @@ function IDTTrue() {
         </Grid>
         <Divider class="divider" />
         <Typography variant="h6" gutterBottom> IDT Comments </Typography>
-        <TableContainer component={Paper} style={{ maxWidth: '100%', overflowX: 'auto' }}>
+        <TableContainer component={Paper} className="table-container">
             <Table style={{ minWidth: 800 }}>
                 <TableHead>
                 <TableRow>
-                    <TableCell colSpan={6} align="center" style={{ borderRight: '1px solid #ccc' }}>
+                    <TableCell colSpan={6} align="center" className="borderElement">
                         Details of Assets
                     </TableCell>
                     <TableCell colSpan={5} align="center">
@@ -56,7 +56,7 @@ function IDTTrue() {
                 </TableRow> 
                 <TableRow>
                     {headers.map((header, index) => (
-                    <TableCell key={index} style={{ borderRight: '1px solid #ccc' }}>
+                    <TableCell key={index} className="borderElement">
                         {header}
                     </TableCell>
                     ))}
@@ -64,7 +64,7 @@ function IDTTrue() {
                 </TableRow>
                 <TableRow>
                     {cells.map((_, index) => (
-                    <TableCell key={index} style={{ borderRight: '1px solid #ccc' }}>
+                    <TableCell key={index} className="borderElement">
                       <TextField variant="outlined" size="small" inputProps={{ readOnly : true}}/>
                     </TableCell>
                   ))}
