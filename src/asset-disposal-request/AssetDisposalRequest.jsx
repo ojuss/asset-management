@@ -5,8 +5,7 @@ import AssetTable from "./AssetTable";
 import PresentConditionTable from "./PresentConditionTable";
 import ApprovalRequirements from "./ApprovalRequirements";
 import Attachements from "./Attachements";
-import formData from '../backend/formData';
-
+import formData from "../backend/formData";
 
 import {
   Box,
@@ -20,27 +19,10 @@ import {
 } from "@material-ui/core";
 
 const AssetDisposalRequest = () => {
-  const [showGDC, setShowGDC] = useState(false);
-  const [showIDT, setShowIDT] = useState(false);
-  const [showImport, setShowImport] = useState(false);
-
-  const [formValues, setFormValues] = useState({ ...formData });
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormValues({ ...formValues, [name]: value }); 
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    
-    console.log(formValues); 
-  };
-
   return (
     <Container maxWidth={false} disableGutters>
       <Header />
-      <form class="form" onChange={handleSubmit}>
+      <form class="form">
         <Typography variant="h4" gutterBottom>
           Asset Disposal Request
         </Typography>
@@ -50,7 +32,7 @@ const AssetDisposalRequest = () => {
 
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
-            <TextField label="Request Ref No." fullWidth variant="outlined" onChange={handleChange}/>
+            <TextField label="Request Ref No." fullWidth variant="outlined" />
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
@@ -59,7 +41,6 @@ const AssetDisposalRequest = () => {
               variant="outlined"
               type="date"
               InputLabelProps={{ shrink: true }}
-              onChange={handleChange}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -67,18 +48,17 @@ const AssetDisposalRequest = () => {
               label="Proposer / Raiser Name"
               fullWidth
               variant="outlined"
-              onChange={handleChange}
             />
           </Grid>
 
           <Grid item xs={12} sm={6}>
-            <TextField label="Division" fullWidth variant="outlined" select onChange={handleChange}>
+            <TextField label="Division" fullWidth variant="outlined" select>
               <MenuItem value="Division 1">Division 1</MenuItem>
               <MenuItem value="Division 2">Division 2</MenuItem>
             </TextField>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField label="BC No" fullWidth variant="outlined" onChange={handleChange} />
+            <TextField label="BC No" fullWidth variant="outlined" />
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
@@ -86,14 +66,13 @@ const AssetDisposalRequest = () => {
               fullWidth
               variant="outlined"
               select
-              onChange={handleChange}
             >
               <MenuItem value="Type 1">Type 1</MenuItem>
               <MenuItem value="Type 2">Type 2</MenuItem>
             </TextField>
           </Grid>
           <Grid item xs={12}>
-            <TextField label="Plant Code & Name" fullWidth variant="outlined" onChange={handleChange}/>
+            <TextField label="Plant Code & Name" fullWidth variant="outlined" />
           </Grid>
         </Grid>
 
@@ -119,7 +98,6 @@ const AssetDisposalRequest = () => {
               variant="outlined"
               multiline
               rows={2}
-              onChange={handleChange}
             />
           </Grid>
           <Grid item xs={12}>
@@ -129,7 +107,6 @@ const AssetDisposalRequest = () => {
               variant="outlined"
               multiline
               rows={2}
-              onChange={handleChange}
             />
           </Grid>
         </Grid>
@@ -144,19 +121,12 @@ const AssetDisposalRequest = () => {
 
         <Divider class="divider" />
 
-        {/* Section 5: Checkboxes */}
-        <Typography variant="h6" gutterBottom>
+        {/* Section 5: IDT and Import Components */}
+        {/* <Typography variant="h6" gutterBottom>
           Approval Requirements
-        </Typography>
+        </Typography> */}
 
-        <ApprovalRequirements
-          showGDC={showGDC}
-          showIDT={showIDT}
-          showImport={showImport}
-          setShowGDC={setShowGDC}
-          setShowIDT={setShowIDT}
-          setShowImport={setShowImport}
-        />
+        <ApprovalRequirements />
 
         <Divider class="divider" />
 

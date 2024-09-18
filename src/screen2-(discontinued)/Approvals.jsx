@@ -97,9 +97,7 @@ const Approvals = () => {
         <Grid item xs={12} sm={4}>
           <Paper className={classes.approvalBox}>
             <Typography className={classes.approvalTitle}>IDT</Typography>
-            <Typography>
-              To be approved from portal first
-            </Typography>
+            <Typography>To be approved from portal first</Typography>
           </Paper>
         </Grid>
       </Grid>

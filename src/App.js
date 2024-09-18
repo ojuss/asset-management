@@ -1,12 +1,11 @@
 import './App.css';
-import AssetDisposalRequest from './screen1-components/AssetDisposalRequest';
-import DispatchRecieptForm from './screen2-components/DispatchRecieptForm';
+// import AssetDisposalRequest from './screen1-components/AssetDisposalRequest';
+import DOA from './screen-template-and-process-flow/DOA';
 
 function App() {
   return (
     <div className="App">
-      <DispatchRecieptForm />
-      {/* <AssetDisposalRequest /> */}
+      <DOA />
     </div>
   );
 }
