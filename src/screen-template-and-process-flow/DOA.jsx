@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import {
   Table,
   TableBody,
@@ -13,21 +12,8 @@ import {
   Container,
 } from "@material-ui/core";
 import Header from "../layout-components/Header";
-const useStyles = makeStyles((theme) => ({
-  table: {
-    minWidth: 650,
-  },
-  highlightedCell: {
-    backgroundColor: theme.palette.warning.light,
-  },
-  redText: {
-    color: theme.palette.error.main,
-  },
-}));
 
 const DOA = () => {
-  const classes = useStyles();
-
   const rows = [
     {
       level: "L5",
@@ -47,10 +33,7 @@ const DOA = () => {
     <Container maxWidth={false} disableGutters>
       <Header />
       <TableContainer component={Paper} class="form">
-        <Table
-          className={classes.table}
-          aria-label="template and process flow table"
-        >
+        <Table aria-label="template and process flow table">
           <TableHead>
             <TableRow>
               <TableCell>Level</TableCell>
@@ -71,35 +54,21 @@ const DOA = () => {
               </TableRow>
             ))}
             <TableRow>
-              <TableCell colSpan={5} className={classes.redText}>
-                L5
-              </TableCell>
+              <TableCell colSpan={5}>L5</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell colSpan={5} className={classes.redText}>
-                Raiser
-              </TableCell>
+              <TableCell colSpan={5}>Raiser</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Sales Order No</TableCell>
               <TableCell colSpan={4}>
-                <TextField
-                  variant="outlined"
-                  size="small"
-                  fullWidth
-                  className={classes.highlightedCell}
-                />
+                <TextField variant="outlined" size="small" fullWidth />
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>UTR No / Date</TableCell>
               <TableCell>
-                <TextField
-                  variant="outlined"
-                  size="small"
-                  fullWidth
-                  className={classes.highlightedCell}
-                />
+                <TextField variant="outlined" size="small" fullWidth />
               </TableCell>
               <TableCell colSpan={3}>
                 <TextField
@@ -107,7 +76,6 @@ const DOA = () => {
                   size="small"
                   fullWidth
                   type="date"
-                  className={classes.highlightedCell}
                   InputLabelProps={{
                     shrink: true,
                   }}
@@ -132,11 +100,7 @@ const DOA = () => {
             <TableRow>
               <TableCell>Final Submission</TableCell>
               <TableCell colSpan={4}>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  className={classes.highlightedCell}
-                >
+                <Button variant="contained" color="primary">
                   Submit
                 </Button>
               </TableCell>
