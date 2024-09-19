@@ -1,12 +1,18 @@
-import './App.css';
-// import AssetDisposalRequest from './screen1-components/AssetDisposalRequest';
-import DOA from './screen-template-and-process-flow/DOA';
+import AssetDisposalRequest from "./asset-disposal-request/AssetDisposalRequest";
+import DOA from "./doa/DOA";
+import AssetRecords from "./asset-details-page/AssetRecords";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <DOA />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<AssetDisposalRequest />} />
+        <Route path="/doa" element={<DOA />} />
+        <Route path="/records" element={<AssetRecords />} />
+      </Routes>
+    </Router>
   );
 }
 

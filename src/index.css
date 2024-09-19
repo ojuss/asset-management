@@ -7,12 +7,12 @@ body {
 }
 
 .form {
-  padding: 60px 140px; 
+  padding: 60px 140px;
 }
 
-@media (max-width: 600px) { 
+@media (max-width: 600px) {
   .form {
-    padding: 30px 20px; 
+    padding: 30px 20px;
   }
 }
 
@@ -23,4 +23,7 @@ body {
 .table-container {
   max-width: 100%;
   overflow-x: auto;
+}
+.table-hover:hover {
+  background-color: #f5f5f5; 
 }

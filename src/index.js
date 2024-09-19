@@ -5,10 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode> {/* StrictMode is a tool for highlighting potential problems in an application. */}
+  <React.StrictMode> 
     <App />
   </React.StrictMode>,
-    document.getElementById('root') // The root DOM node is the entry point of the React app.
+    document.getElementById('root') 
 );
 
 reportWebVitals();
