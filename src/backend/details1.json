@@ -1,5 +1,4 @@
-
-const formData = {
+ formData = {
 
     // Section 1: Request Details
 
@@ -37,5 +36,3 @@ const formData = {
     attachments: [], 
   };
   
-  export default formData;
-

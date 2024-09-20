@@ -14,10 +14,9 @@ import {
   Button,
   Box,
 } from "@material-ui/core";
-import Attachements from "./Attachements";
+import Attachements from "../asset-disposal-request/Attachements";
 
 function GDCTrue() {
-  const cells = Array(9).fill(null);
 
   const headers = [
     "Asset Code / No.",
@@ -84,7 +83,7 @@ function GDCTrue() {
               ))}
             </TableRow>
             <TableRow>
-              {cells.map((_, index) => (
+              {headers.map((_, index) => (
                 <TableCell key={index} className="borderElement">
                   <TextField
                     variant="outlined"

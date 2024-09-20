@@ -1,0 +1,31 @@
+"data" [
+    {
+    
+      id: "1",
+      autoGenNumber: "AGN1",
+      raiserId: "RAISER1",
+      raiserName: "Raiser 1",
+      raiserDept: "Dept 1",
+      raiserDate: "01/01/2021",
+      type: "Type 1",
+      division: "Division 1",
+      plantCode: "Plant Code 1",
+      status: "Status 1",
+      noOfAssets: "1",
+      assetIds: "Asset ID 1",
+    },
+    {
+      id: "2",
+      autoGenNumber: "AGN2",
+      raiserId: "RAISER2",
+      raiserName: "Raiser 2",
+      raiserDept: "Dept 2",
+      raiserDate: "02/02/2022",
+      type: "Type 2",
+      division: "Division 2",
+      plantCode: "Plant Code 2",
+      status: "Status 2",
+      noOfAssets: "2",
+      assetIds: "Asset ID 2",
+    },
+];

@@ -17,8 +17,6 @@ import {
 import Attachements from "./Attachements";
 
 function ImportTrue() {
-  const cells = Array(9).fill(null);
-
   const headers = [
     "Asset Code / No.",
     "Asset Description",
@@ -77,14 +75,14 @@ function ImportTrue() {
               </TableCell>
             </TableRow>
             <TableRow>
-              {headers.map((header, index) => (
-                <TableCell key={index} className="borderElement">
+              {headers.map((header) => (
+                <TableCell key={header} className="borderElement">
                   {header}
                 </TableCell>
               ))}
             </TableRow>
             <TableRow>
-              {cells.map((_, index) => (
+              {headers.map((_, index) => (
                 <TableCell key={index} className="borderElement">
                   <TextField
                     variant="outlined"

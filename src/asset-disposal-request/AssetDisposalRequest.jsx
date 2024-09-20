@@ -83,6 +83,9 @@ const AssetDisposalRequest = () => {
           Asset Details
         </Typography>
         <AssetTable />
+        <Button variant="contained" color="primary">
+          Add Row
+        </Button>
 
         <Divider class="divider" />
 
